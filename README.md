@@ -64,7 +64,7 @@ Autentikointi endpoint:
     NAME: Login endpoint
     POST api/v1/auth/login
     PARAMS: {user: string, password: string}
-    RESPONSE: HTTP 200 {token: string}, 401, 400, 500
+    RESPONSE: HTTP 200 {token: string}
 
 
 Tapahtuma (event) tiedot:
@@ -92,7 +92,7 @@ Lipun myynti:
     NAME: Ticket sales
     POST api/v1/tickets/sell
     PARAMS: {event_id: string, tickets: [{id: string, amount}]}
-    RESPONSE: {
+    RESPONSE: HTTP 200 {
         transaction_id: string,
          payment_time: datetime,
           total: number, tickets: [{
